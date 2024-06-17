@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-express-server",
+  "version": "1.0.0",
+  "description": "A simple Node.js Express server for token generation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
