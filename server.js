@@ -14,7 +14,12 @@ app.post('/auth/token', (req, res) => {
   const { username, password } = req.body;
 
   if (username === 'demo_user' && password === 'demo_password') {
-    const accessToken = jwt.sign({ username: username }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    // Load the AUTH_SECRET_KEY from env or use a default value (if needed)
+    const secretKey = process.env.AUTH_SECRET_KEY || 'default_secret_key';
+
+    // Generate JWT token using the secret key
+    const accessToken = jwt.sign({ username: username }, secretKey, { expiresIn: '1h' });
+    
     res.status(200).json({ access_token: accessToken });
   } else {
     res.status(401).json({ error: 'Unauthorized' });
